@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+
+            <div class="navbar">
+
+                <div class="navbar-inner">
+                    <div class="left sliding">
+                        <a href="index.html" class="back link external">
+                            <i class="icon icon-back"></i>
+
+                        </a>
+
+                    </div>
+                    <div class="center sliding">
+                        <a href="#"><img src="img/logo.png"></a>
+                    </div>
+
+                    <div class="right sliding">
+
+                    </div>
+                </div>
+            </div>
+            <div class="pages navbar-fixed toolbar-fixed">
+
+                <div data-page="display_advt" class="page">
+                    <div class="page-content login-screen-content">
+                        <div class="content-block no-padding">
+                            <div class="item-content ">
+
+                                <div class="content-block no-padding">
+                                    <h3>CLASSIFIED DISPLAY ADVERTISEMENT
+		  </h3>
+                                </div>
+                            </div>
+
+                            <form id="my-form" class="ajax-submit">
+                                <div class="list-block inset">
+                                    <ul>
+                                        <div class="content-block-title">Ad Type</div>
+                                        <li class="item-content">
+
+                                            <div class="item-input">
+                                                <select name="ad_type">
+                                                    <option value="Display Advertisement">Display Advertisement</option>
+                                                    <option value="Obituary">Birthday</option>
+                                                    <option value="Obituary">Obituary</option>
+
+                                                </select>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Ad Color</div>
+                                        <li class="item-content">
+
+                                            <div class="item-input">
+                                                <select name="ad_color">
+                                                    <option value="Color">Color</option>
+                                                    <option value="Blank & White">Blank & White</option>
+
+                                                </select>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Page No</div>
+                                        <li class="item-content">
+
+                                            <div class="item-input">
+                                                <select name="page_no">
+                                                    <option value='1'>Front Page</option>
+                                                    <option value='2'>Back Page</option>
+                                                    <option value='3'>Page 3</option>
+                                                    <option value='4'>Any Other Page</option>
+
+                                                </select>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Choose Template</div>
+                                        <li class="item-content">
+
+                                            <div class="item-input">
+                                                <select name="template">
+                                                    <option value='1'>12(W) 15(H) Medium 1,08,000</option>
+                                                    <option value='2'>12(W) 20(H) Medium 1,44,000</option>
+                                                    <option value='3'>16(W) 25(H) Quater Page 2,40,000</option>
+                                                    <option value='4'>32.9(W) 25(H) Half Page 4,93,500</option>
+                                                    <option value='5'>32.9(W) 45(H) Full Page 8,88,300</option>
+
+                                                </select>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Attach Art Work</div>
+                                        <li class="item-content">
+                                            <div class="item-inner">
+
+                                                <div class="item-input">
+                                                    <input type="file" name="attach_art_work" id="new-image">
+                                                    <a href="#" class="button upload-image"></a>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Select Dates</div>
+                                        <li>
+
+										<div class="content-block">
+										  <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
+											<div id="calendar-inline-container"></div>
+										  </div>
+										</div> 
+
+                                        </li>
+
+                                        <div class="content-block-title">Name</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="name" type="text" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">Address</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="address" type="text" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">Contact number</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="tel" type="tel" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">E-mail</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="email" type="email" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">Confirm E-mail</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="c_email" type="email" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    
+                           
+                        </ul>
+						 </div>
+                     </form>
+					 
+					 <div class="content-block">
+							<div class="row">
+								<div class="col-50"><a href="#" class="button button-big button-fill color-blue form-to-json">Submit</a></div>
+								<div class="col-50"><a href="index.html" class="external button button-big button-fill color-red">Cancel</a></div>
+								
+							</div>
+						</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+
+    <script type="text/javascript" src="js/my-app.js"></script>
+	<script>
+         var myApp = new Framework7();
+
+         var $$ = Dom7;
+
+         $$('.form-to-json').on('click', function(){
+           var formData = myApp.formToJSON('#my-form');
+           alert(JSON.stringify(formData));
+         });
+      </script>
+      <script>
+	  var $$ = Dom7;
+var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
+ 
+var calendarInline = myApp.calendar({
+    container: '#calendar-inline-container',
+    value: [new Date()],
+    weekHeader: false,
+	multiple: true,
+    toolbarTemplate: 
+        '<div class="toolbar calendar-custom-toolbar">' +
+            '<div class="toolbar-inner">' +
+                '<div class="left">' +
+                    '<a href="#" class="link icon-only"><i class="icon icon-back"></i></a>' +
+                '</div>' +
+                '<div class="center"></div>' +
+                '<div class="right">' +
+                    '<a href="#" class="link icon-only"><i class="icon icon-forward"></i></a>' +
+                '</div>' +
+            '</div>' +
+        '</div>',
+    onOpen: function (p) {
+        $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
+        $$('.calendar-custom-toolbar .left .link').on('click', function () {
+            calendarInline.prevMonth();
+        });
+        $$('.calendar-custom-toolbar .right .link').on('click', function () {
+            calendarInline.nextMonth();
+        });
+    },
+    onMonthYearChangeStart: function (p) {
+        $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
+    }
+});      
+      </script>
+
+</body>
+
+</html>

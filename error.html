@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+
+    <link rel="stylesheet" href="css/material-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+
+            <div class="pages">
+        <div class="page no-navbar blue-color" data-page="error">
+          <div class="page-content">
+
+    
+
+			<div class="row padding2">
+        <div class="col-33"></div>
+        <div class="col-35"> 
+			<img src="img/logo.png">
+			<p class="net"><strong>Network Error.</strong></p>
+		</div>
+        <div class="col-33"></div>
+      </div>
+	  <div class="row padding3">
+        <div class="col-48"></div>
+        <div class="col-4"> <a href="index.html" class="external refresh"><i class="material-icons md-48">refresh</i></a> </div>
+        <div class="col-48"></div>
+      </div>
+	  
+          </div>
+        </div>
+      </div>
+            
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+</body>
+
+</html>

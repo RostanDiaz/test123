@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://app.heraldgoa.in 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>Herald App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+	<link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+	<link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+ <div class="statusbar-overlay"></div>
+ 
+<script type="text/template7" id="StoryPage">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="center">My Page</div>
+        </div>
+    </div>
+    <div class="page no-navbar" data-page="StoryPage">
+  <div class="toolbar toolbar-top tool2">
+                    <div class="toolbar-inner">
+          <div class="left">
+                        <a href="" class="back link"><i class="icon icon-back"></i></a>
+                    </div> 
+          
+                    
+          <div class="right">
+          <a onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')" class="link icon-only"><i class="material-icons white-color">share</i></a>
+          </div>
+                </div>
+        </div>
+        <div class="page-content padding1">
+          
+          <div class="content-block inset">
+          <h2>{{vTitle}}</h2>
+          <p>
+            
+            <img data-src="http://www.heraldgoa.in/uploads/news/{{vPic}}" width="100%" class="lazy lazy-fadeIn" ng-if="vPic.length > 10">
+            
+          </p>
+          
+          <div class="item-text">{{vCredits}} | {{dtNewsdate}}</div>
+            <div class="content-block-inner">
+            
+            <p class="blue-color1">{{vStrapLine}}</p>
+            </div>
+            <div class="content-block-inner">{{vContent}}</div>
+          </div>
+          
+           
+        </div>
+    </div>
+</script> 
+ 
+   
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-cover">
+        <div class="content-block">
+		
+		
+            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init"> 
+           <div class="searchbar-input"> 
+            <input type="search" placeholder=" Search"><a href="#" class="searchbar-clear"></a> 
+             </div>
+           <a href="#" class="searchbar-cancel">Cancel</a> 
+             </form>
+
+		<div class="list-block">
+  <ul>
+    <li>
+      <a href="index.html" class="item-link external item-content close-panel">
+        <div class="item-media"><i class="material-icons ">home</i></div>
+        <div class="item-inner">
+          <div class="item-title">News</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">favorite</i></div>
+        <div class="item-inner">
+          <div class="item-title">Favourites</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" data-popover=".popover-links"  class="item-link item-content open-popover">
+        <div class="item-media"><i class="material-icons ">bookmark</i></div>
+        <div class="item-inner">
+          <div class="item-title">Book My Ad</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="oheraldo_epaper" target="_blank" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">chrome_reader_mode</i></div>
+        <div class="item-inner">
+          <div class="item-title">oHeraldo e-paper</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="dainik_epaper" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">chrome_reader_mode</i></div>
+        <div class="item-inner">
+          <div class="item-title">Dainik Herald e-paper</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="amcho_avaz_epaper" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">chrome_reader_mode</i></div>
+        <div class="item-inner">
+          <div class="item-title">Amcho Avaz e-paper</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="junior_herald_epaper" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">chrome_reader_mode</i></div>
+        <div class="item-inner">
+          <div class="item-title">Junior Herald</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="hcn_yt_channel" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">tv</i></div>
+        <div class="item-inner">
+          <div class="item-title">HCN Youtube Channel</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="hcn_live_tv" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">tv</i></div>
+        <div class="item-inner">
+          <div class="item-title">HCN Live TV</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="" id="herald_events" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">event</i></div>
+        <div class="item-inner">
+          <div class="item-title">Herald Events</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="about.html" class="item-link item-content close-panel" >
+        <div class="item-media"><i class="material-icons ">info</i></div>
+        <div class="item-inner">
+          <div class="item-title">About Us</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="terms.html" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">local_library</i></div>
+        <div class="item-inner">
+          <div class="item-title">Terms Of Use</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="contact.html" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">contact_mail</i></div>
+        <div class="item-inner">
+          <div class="item-title">Contact Us</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="login.html" class="item-link item-content close-panel">
+        <div class="item-media"><i class="material-icons ">verified_user</i></div>
+        <div class="item-inner">
+          <div class="item-title">Login</div> 
+		  
+        </div>
+      </a>
+    </li>
+	<li>
+      <a href="error.html" class="item-link external item-content close-panel">
+        <div class="item-media"><i class="material-icons ">verified_user</i></div>
+        <div class="item-inner">
+          <div class="item-title">error</div> 
+		  
+        </div>
+      </a>
+    </li>
+    
+  </ul>
+  
+</div>
+</div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+			
+			
+                <div class="navbar">
+
+                    <div class="navbar-inner">
+                        <div class="left sliding">
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        </div>
+                        <div class="center sliding">
+                            <a href="#"><img src="img/logo.png"></a>
+                        </div>
+                        
+						<div class="right sliding">
+							<a onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')" class="link icon-only"><i class="material-icons white-color">share</i></a>
+							<a href="#" class="link icon-only open-panel"><i class="material-icons white-color">search</i></a>
+						</div>
+                    </div>
+					
+                </div>
+				
+				<div class="pages navbar-fixed toolbar-fixed">
+				<div data-page="index" class="page">
+				
+                        
+				
+                <!-- Additional "tabbar-scrollable" class -->
+                <div class="toolbar tabbar tabbar-scrollable ">
+                    <div class="toolbar-inner">
+                        <a href="#tab1" class="tab-link active">Top Stories</a>
+                        <a href="#tab2" class="tab-link">Goa</a>
+                        <a href="#tab3" class="tab-link">Business</a>
+                        <a href="#tab4" class="tab-link">Edit</a>
+                        <a href="#tab5" class="tab-link">Orbituary</a>
+                        <a href="#tab6" class="tab-link">Sports</a>
+                        <a href="#tab7" class="tab-link">Cafe</a>
+                        <a href="#tab8" class="tab-link">Review</a>
+                        <a href="#tab9" class="tab-link">Others</a>
+
+                    </div>
+                </div>
+                
+				
+				
+            <div class="page-content no-padding">
+                <div class="tabs-swipeable-wrap">
+                    <div class="tabs">
+                        <div id="tab1" class="page-content with-subnavbar tab active">
+                            <div class="content-block">
+                              <div class="list-block item-link media-list virtual-list aTopStories no-border1"></div>
+								            </div>
+								
+                            
+                        </div>
+                        <div id="tab2" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aGoa no-border1"></div>
+								
+							</div>
+                        </div>
+                        <div id="tab3" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aBuss no-border1"></div>
+                            </div>
+                        </div>
+						<div id="tab4" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aEdit no-border1"></div>
+                            </div>
+                        </div>
+						<div id="tab5" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list no-border1"></div>
+                            </div>
+                        </div>
+						<div id="tab6" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aSports no-border1"></div>
+                            </div>
+                        </div>
+						<div id="tab7" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aCafe no-border1"></div>
+                            </div>
+                        </div>
+						<div id="tab8" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aReview no-border1"></div>
+                            </div>
+                        </div><div id="tab9" class="page-content tab">
+                            <div class="content-block">
+                                <div class="list-block item-link media-list virtual-list aOthers no-border1"></div>
+                            </div>
+                        </div>
+						
+						
+                    </div>
+                </div>
+
+           
+           
+            </div>
+            </div>
+			
+			
+			
+			
+            </div>
+
+        </div>
+    </div>
+	
+	<div class="popover popover1 popover-links">
+    <div class="popover-angle"></div>
+    <div class="popover-inner">
+      <div class="list-block">
+        <ul>
+          <li><a href="text_advt.html" class="external list-button item-link close-panel close-popover">Text Advertisement</a></li>
+          <li><a href="display_advt.html" class="external list-button item-link close-panel close-popover">Display Advertisement</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+	
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+	
+    <script type="text/javascript" src="js/my-app.js"></script>
+    
+    
+    
+    
+</body>
+
+</html>

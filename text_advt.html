@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/material-icons.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+
+            <div class="navbar">
+
+                <div class="navbar-inner">
+                    <div class="left sliding">
+                        <a href="index.html" class="back link external">
+                            <i class="icon icon-back"></i>
+
+                        </a>
+
+                    </div>
+                    <div class="center sliding">
+                        <a href="#"><img src="img/logo.png"></a>
+                    </div>
+
+                    <div class="right sliding">
+
+                    </div>
+                </div>
+            </div>
+            <div class="pages navbar-fixed toolbar-fixed">
+
+                <div class="page" data-page="text_advt">
+                    <div class="page-content login-screen-content">
+                        <div class="content-block no-padding">
+                            <div class="item-content ">
+
+                                <div class="content-block no-padding">
+                                    <h3>CLASSIFIED TEXT ADVERTISEMENT
+
+		  </h3>
+                                </div>
+                            </div>
+
+                            <form id="my-form" class="ajax-submit">
+                                <div class="list-block inset">
+                                    <ul>
+                                        <div class="content-block-title">Ad Industry</div>
+                                        <li class="item-content">
+
+                                            <div class="item-input">
+                                                <select name="Industry">
+                                                    <option value="Appointment">Appointment</option>
+                                                    <option value="Auto Mobile">Auto Mobile</option>
+                                                    <option value="Real Estates">Real Estates</option>
+                                                    <option value="Business Offer">Business Offer</option>
+                                                    <option value="Education">Education</option>
+                                                    <option value="Matrimonial">Matrimonial</option>
+                                                    <option value="Other">Other</option>
+
+                                                </select>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Ad Category</div>
+                                        <li class="item-content">
+
+                                            <div class="item-input">
+                                                <select name="Category">
+                                                    <option value='1'>Situation Vacent</option>
+                                                    <option value='2'>Situation Wanted</option>
+                                                    <option value='3'>Vehicle Available</option>
+                                                    <option value='4'>Vehicle Wanted</option>
+                                                    <option value='5'>Accomation Available</option>
+                                                    <option value='6'>Accomation Wanted</option>
+                                                    <option value='7'>Premises Available</option>
+                                                    <option value='8'>Premises Wanted</option>
+                                                    <option value='9'>Properties Available</option>
+                                                    <option value='10'>Properties Wanted</option>
+                                                    <option value='11'>Business Offers</option>
+                                                    <option value='12'>Education</option>
+                                                    <option value='13'>Matrimonial </option>
+                                                    <option value='14'>Astrology</option>
+                                                    <option value='15'>Beauty &amp; care</option>
+                                                    <option value='16'>Business &amp; Finanace</option>
+                                                    <option value='17'>Consultancy</option>
+                                                    <option value='18'>Dance</option>
+                                                    <option value='19'>Entertainment</option>
+                                                    <option value='20'>Heath &amp; care</option>
+                                                    <option value='21'>Hotels/ Resorts</option>
+                                                    <option value='22'>Lost &amp; found</option>
+                                                    <option value='23'>Medical</option>
+                                                    <option value='24'>Miscellaneous Available</option>
+                                                    <option value='25'>Miscellaneous Wanted</option>
+                                                    <option value='26'>Musical Instrument</option>
+                                                    <option value='27'>Personal</option>
+                                                    <option value='28'>Pest Control</option>
+                                                    <option value='29'>Pets &amp; livestock</option>
+                                                    <option value='30'>Plants &amp; Seedlings</option>
+                                                    <option value='31'>Shipping</option>
+                                                    <option value='32'>Stamps &amp; Coins</option>
+                                                    <option value='33'>Thanksgiving</option>
+                                                    <option value='34'>Tours &amp; Travels</option>
+                                                </select>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Select Dates</div>
+                                        <li>
+
+                                            <div class="content-block">
+                                                <div style="padding:0; margin-right:-15px; width:auto" class="content-block-inner">
+                                                    <div name="dates" id="calendar-inline-container"></div>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <div class="content-block-title">Classified Text Ad ( Max 60 Words )</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <textarea name="text_ad" class="resizable" placeholder="Type here..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <div class="content-block-title">Name</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="name" type="text" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">Address</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="address" type="text" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">Phone number</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="tel" type="tel" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">E-mail</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="email" type="email" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <div class="content-block-title">Confirm E-mail</div>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+
+                                                    <div class="item-input">
+                                                        <input name="c-email" type="email" placeholder="Type here...">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+
+                            </form>
+							<div class="content-block">
+							<div class="row">
+								<div class="col-50"><a href="#" class="button button-big button-fill color-blue form-to-json">Submit</a></div>
+								<div class="col-50"><a href="index.html" class="external button button-big button-fill color-red">Cancel</a></div>
+								
+							</div>
+						</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+
+    <script type="text/javascript" src="js/my-app.js"></script>
+	<script>
+         var myApp = new Framework7();
+
+         var $$ = Dom7;
+
+         $$('.form-to-json').on('click', function(){
+           var formData = myApp.formToJSON('#my-form');
+           alert(JSON.stringify(formData));
+         });
+      </script>
+	  <script>
+	  var $$ = Dom7;
+var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' , 'September' , 'October', 'November', 'December'];
+ 
+var calendarInline = myApp.calendar({
+    container: '#calendar-inline-container',
+    value: [new Date()],
+    weekHeader: false,
+	multiple: true,
+    toolbarTemplate: 
+        '<div class="toolbar calendar-custom-toolbar">' +
+            '<div class="toolbar-inner">' +
+                '<div class="left">' +
+                    '<a href="#" class="link icon-only"><i class="icon icon-back"></i></a>' +
+                '</div>' +
+                '<div class="center"></div>' +
+                '<div class="right">' +
+                    '<a href="#" class="link icon-only"><i class="icon icon-forward"></i></a>' +
+                '</div>' +
+            '</div>' +
+        '</div>',
+    onOpen: function (p) {
+        $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
+        $$('.calendar-custom-toolbar .left .link').on('click', function () {
+            calendarInline.prevMonth();
+        });
+        $$('.calendar-custom-toolbar .right .link').on('click', function () {
+            calendarInline.nextMonth();
+        });
+    },
+    onMonthYearChangeStart: function (p) {
+        $$('.calendar-custom-toolbar .center').text(monthNames[p.currentMonth] +', ' + p.currentYear);
+    }
+});      
+      </script>
+
+</body>
+
+</html>
